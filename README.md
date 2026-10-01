@@ -8,6 +8,8 @@ Service, and shows the matching CIDR prefixes in a numbered table.
 
 Built on [Textual](https://textual.textualize.io/).
 
+![Demo](demo/demo.gif)
+
 ## Features
 
 - Fetches the AWS IP ranges document over HTTPS on startup (15s timeout).
