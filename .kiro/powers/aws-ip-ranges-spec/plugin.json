@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "aws-ip-ranges-spec",
+  "version": "1.0.0",
+  "description": "Reference for the AWS public IP ranges document (ip-ranges.json): its top-level structure and per-entry fields, so parser/models changes stay faithful to the source format.",
+  "author": {
+    "name": "AWS Public IP Ranges Navigator"
+  },
+  "keywords": [
+    "ip-ranges",
+    "ip-ranges.json",
+    "prefixes",
+    "ipv6_prefixes",
+    "ip_prefix",
+    "aws ip ranges",
+    "network_border_group",
+    "syncToken"
+  ]
+}

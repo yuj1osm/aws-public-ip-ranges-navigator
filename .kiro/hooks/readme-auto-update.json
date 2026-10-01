@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "README Auto Update",
+      "trigger": "PostFileSave",
+      "description": "When a Python source file is saved, reflect the changes into README.md",
+      "matcher": "src/aws_ip_navigator/.*\\.py$",
+      "action": {
+        "type": "agent",
+        "prompt": "A Python source file was saved. Check whether this change affects the project's README.md (feature list, how to launch, keyboard controls, dependencies, project layout, etc.).\n\nSteps:\n1. Read the saved source file.\n2. Read README.md and compare it against the implementation, looking for drift (new features, removed features, changed key bindings or commands, changed dependencies, etc.).\n3. Update README.md only if there is drift. Preserve the existing tone, structure, and formatting, and keep edits minimal.\n4. If there is no drift, make no changes and briefly report that.\n\nWrite the README in English. Do not invent features that do not exist in the implementation."
+      },
+      "enabled": false
+    }
+  ]
+}

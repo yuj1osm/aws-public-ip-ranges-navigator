@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aws-ip-navigator"
+version = "0.1.0"
+description = "A keyboard-driven TUI for browsing and filtering AWS public IP ranges."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "AWS Public IP Ranges Navigator" }]
+keywords = ["aws", "ip-ranges", "tui", "textual", "cidr"]
+dependencies = [
+    "textual",
+]
+
+[project.optional-dependencies]
+dev = [
+    "hypothesis",
+    "pytest",
+    "ruff",
+]
+
+# The application is launched with a single command and no option arguments
+# via `python -m aws_ip_navigator` (see src/aws_ip_navigator/__main__.py,
+# added in a later task). A console-script entry point is intentionally
+# omitted so the documented launch path stays `python -m aws_ip_navigator`.
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+# Match the project's Python style guideline (PEP 8, ~88-99 char lines).
+line-length = 99
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+# E/W: pycodestyle, F: pyflakes, I: import sorting (stdlib -> third-party -> local).
+select = ["E", "W", "F", "I"]
